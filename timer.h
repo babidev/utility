@@ -10,10 +10,10 @@ class timer final
 {
 public:
   timer() {
-    start = std::chrono::system_clock::now();
+    start = std::chrono::high_resolution_clock::now();
   }
   ~timer() {
-    stop = std::chrono::system_clock::now();
+    stop = std::chrono::high_resolution_clock::now();
     auto duration = stop - start;
     std::string message = std::string{"Timer: "} +
                           std::to_string(0.000001 * duration.count()) +
@@ -21,8 +21,8 @@ public:
     std::cout << message;
   }
 private:
-  std::chrono::system_clock::time_point start;
-  std::chrono::system_clock::time_point stop;
+  std::chrono::high_resolution_clock::time_point start;
+  std::chrono::high_resolution_clock::time_point stop;
 };
 
 }
