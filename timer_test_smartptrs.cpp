@@ -12,7 +12,7 @@ struct point {
 
 int main()
 {
-  std::cout << "Mesure the unique_ptr using new" << std::endl;
+  std::cout << "Measure the unique_ptr using new" << std::endl;
   {
     std::array<std::unique_ptr<point>, 1000> unique_ptrs;
     utility::timer timer;
@@ -20,7 +20,7 @@ int main()
       unique_ptrs[i] = std::unique_ptr<point>(new point());
     }
   }
-  std::cout << "Mesure the unique_ptr using make_unique" << std::endl;
+  std::cout << "Measure the unique_ptr using make_unique" << std::endl;
   {
     std::array<std::unique_ptr<point>, 1000> unique_ptrs;
     utility::timer timer;
@@ -28,7 +28,7 @@ int main()
       unique_ptrs[i] = std::make_unique<point>();
     }
   }
-  std::cout << "Mesure the shared_ptr using new" << std::endl;
+  std::cout << "Measure the shared_ptr using new" << std::endl;
   {
     std::array<std::shared_ptr<point>, 1000> shared_ptrs;
     utility::timer timer;
@@ -36,7 +36,7 @@ int main()
       shared_ptrs[i] = std::shared_ptr<point>(new point());
     }
   }
-  std::cout << "Mesure the shared_ptr using make_shared" << std::endl;
+  std::cout << "Measure the shared_ptr using make_shared" << std::endl;
   {
     std::array<std::shared_ptr<point>, 1000> shared_ptrs;
     utility::timer timer;
